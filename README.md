@@ -15,4 +15,4 @@ TOKEN - YOUR_TOKEN
 
 
 
-https://YOUR_PROJECT_NAME.pages.dev/n3x#YOUR_TOKEN
+https://YOUR_PROJECT_NAME.pages.dev/#YOUR_TOKEN
