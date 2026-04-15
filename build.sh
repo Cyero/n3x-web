@@ -2,9 +2,9 @@
 set -e
 
 mkdir -p dist
-cp n3x.html dist/n3x.html
+cp index.html dist/index.html
 
-file="dist/n3x.html"
+file="dist/index.html"
 
 content=$(cat "$file")
 
