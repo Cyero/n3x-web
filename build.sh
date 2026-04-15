@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-rm -rf dist
+rm -rf dist/
 mkdir -p dist
 cp index.html dist/index.html
 
