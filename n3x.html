@@ -542,11 +542,11 @@
   });
 
   function openLink(url) {
-    if (tg && tg.openLink) {
-      tg.openLink(url);
-    } else {
-      window.open(url, '_blank');
-    }
+    const a = document.createElement("a");
+    a.href = url;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 </script>
 </body>
