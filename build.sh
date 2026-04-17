@@ -11,5 +11,6 @@ content=$(cat "$file")
 
 content="${content//__HAPP_LINK__/$HAPP_LINK}"
 content="${content//__TOKEN__/$TOKEN}"
+content="${content//__VPN_NAME__/$VPN_NAME}"
 
 echo "$content" > "$file"
