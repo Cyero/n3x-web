@@ -1,5 +1,5 @@
 # n3x-web
-Web-template for Cloudflare Pages
+Web page for client-side n3x configuration
 ________________________________
 pages.cloudflare.com → Create a project → Connect to Git
 
