@@ -505,7 +505,7 @@
 <script>
   // Token protection
   const TOKEN = '__TOKEN__';
-  const hash = decodeURIComponent(window.location.hash.slice(1));
+  const hash = new URLSearchParams(window.location.search).get('token') || '';
   if (hash !== TOKEN) {
     document.head.innerHTML = '<meta charset="UTF-8"><title>404 Not Found</title><style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0f0f0f;color:#333;font-family:monospace;display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:12px;}h1{font-size:72px;font-weight:700;color:#1a1a1a;letter-spacing:-2px;}p{font-size:13px;color:#2a2a2a;}</style>';
     document.body.innerHTML = '<h1>404</h1><p>Not Found</p>';
