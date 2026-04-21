@@ -401,7 +401,7 @@
         <div class="profile-icon stability">🌐</div>
         <div class="profile-info">
           <div class="profile-name">Stability <span class="badge best">надёжный</span></div>
-          <div class="profile-desc">Схож с Safety по маскировке, но использует глобальные CDN. Может быть быстрее при некоторых провайдерах.</div>
+          <div class="profile-desc">Маскируется под обычное поведение Chromium браузера. Максимальная устойчивость к обнаружению</div>
         </div>
       </div>
 
@@ -542,11 +542,20 @@
   });
 
   function openLink(url) {
-    const a = document.createElement("a");
-    a.href = url;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    const tgApp = window.Telegram?.WebApp;
+    if (tgApp && tgApp.openLink) {
+      if (url.startsWith('https://t.me/') || url.startsWith('tg://')) {
+        tgApp.openTelegramLink(url);
+      } else {
+        tgApp.openLink(url, { try_instant_view: false });
+      }
+    } else {
+      const a = document.createElement("a");
+      a.href = url;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   }
 </script>
 </body>
