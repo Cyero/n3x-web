@@ -543,8 +543,8 @@
 
   function openLink(url) {
     const tgApp = window.Telegram?.WebApp;
-    if (tgApp && tgApp.openLink) {
-      if (url.startsWith('https://t.me/') || url.startsWith('tg://')) {
+    if (tgApp && tgApp.openLink && url.startsWith('https://')) {
+      if (url.startsWith('https://t.me/')) {
         tgApp.openTelegramLink(url);
       } else {
         tgApp.openLink(url, { try_instant_view: false });
